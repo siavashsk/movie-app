@@ -1,7 +1,7 @@
 import { ModalProvider } from "../context/ModalContext";
 import { ToastProvider } from "../context/ToastContext";
 import { View, StyleSheet } from "react-native";
-import Home from "../components/home";
+import { Home } from "../components";
 
 const HomeScreen = () => {
   return (

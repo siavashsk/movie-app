@@ -19,7 +19,7 @@ const validationSchema = yup.object().shape({
     .integer("Year must be an integer"),
 });
 
-const editModal = () => {
+const EitModal = () => {
   const { editModalVisible, closeEditModal, data } = useModal();
   const { showToast } = useToast();
 
@@ -167,4 +167,4 @@ const editModal = () => {
   );
 };
 
-export default editModal;
+export default EitModal;

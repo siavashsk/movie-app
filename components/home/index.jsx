@@ -6,11 +6,9 @@ import {
   Pressable,
   ActivityIndicator,
 } from "react-native";
-import Book from "../book";
+import { Book, AddModal, EditModal } from "../";
 import styles from "./styles";
 import { DELETE, GET } from "../../services/endpoints";
-import AddModal from "../modal";
-import EditModal from "../modal/editModal";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useModal } from "../../context/ModalContext";
 import { useQuery } from "react-query";
@@ -44,7 +42,7 @@ const Home = () => {
 
   const getBooks = async () => {
     try {
-      const data = await GET("/books"); 
+      const data = await GET("/books");
       return data;
     } catch (err) {
       showToast("Failed to load books", "not");
