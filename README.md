@@ -20,6 +20,14 @@ Add and Remove Books
 
 
 ## 🚀 Setup
+Follow the following steps to get development environment running.
+
+- Clone _'git@github.com:siavashsk/bookstore.git'_ repository
+
+
+- Install dependencies
 ###  npm install  
+
+- start development server
 ###  npm run web
 ###  npm run proxy  (for this you might need to turn your VPN on) 
