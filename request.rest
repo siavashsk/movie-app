@@ -1,0 +1,18 @@
+### Get Books
+
+GET https://postman-library-api.glitch.me/books
+
+
+### Post book
+POST https://postman-library-api.glitch.me/books
+content-type: application/json
+
+{
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "genre": "fiction",
+    "yearPublished": 1967
+}
+
+### delete endpoint
+DELETE https://postman-library-api.glitch.me/books/vjerfKckLmMzHvd
