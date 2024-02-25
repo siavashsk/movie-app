@@ -6,25 +6,24 @@ import {
   Pressable,
   ActivityIndicator,
 } from "react-native";
-import Book from "../book";
+import { Book, AddModal, EditModal } from "../";
 import styles from "./styles";
 import { DELETE, GET } from "../../services/endpoints";
-import AddModal from "../modal";
-import EditModal from "../modal/editModal";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useModal } from "../../context/ModalContext";
 import { useQuery } from "react-query";
 import SearchInput from "../search";
 import { useToast } from "../../context/ToastContext";
+import { useNavigation } from "@react-navigation/native";
 
 const Home = () => {
+  const navigation = useNavigation();
+
   const { showToast } = useToast();
   // Add Modal
   const { openModal } = useModal();
-
   // Edit modal
   const { openEditModal } = useModal();
-
   // search states
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -44,7 +43,7 @@ const Home = () => {
 
   const getBooks = async () => {
     try {
-      const data = await GET("/books"); 
+      const data = await GET("/books");
       return data;
     } catch (err) {
       showToast("Failed to load books", "not");
@@ -90,6 +89,13 @@ const Home = () => {
           <Text style={styles.buttonText}>Add Book</Text>
         </Pressable>
       </View>
+      <Pressable
+        style={[styles.button, { width: "100%", marginTop: 5 }]}
+        onPress={() => navigation.navigate("Search")}
+      >
+        <Icon name="search" size={10} color="#fff" />
+        <Text style={styles.buttonText}>Search Screen</Text>
+      </Pressable>
       <ScrollView style={styles.container}>
         {filteredData?.map((item) => (
           <Book
