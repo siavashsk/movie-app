@@ -1,17 +1,16 @@
-import { ModalProvider } from "../context/ModalContext";
-import { ToastProvider } from "../context/ToastContext";
 import { View, StyleSheet } from "react-native";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { Home } from "../components";
 
 const HomeScreen = () => {
+  const queryClient = new QueryClient();
+
   return (
-    <ToastProvider>
-      <ModalProvider>
-        <View style={styles.container}>
-          <Home />
-        </View>
-      </ModalProvider>
-    </ToastProvider>
+    <QueryClientProvider client={queryClient}>
+      <View style={styles.container}>
+        <Home />
+      </View>
+    </QueryClientProvider>
   );
 };
 
