@@ -37,14 +37,6 @@ const styles = StyleSheet.create({
 
   /* text input styles  */
 
-  input: {
-    borderWidth: 1,
-    borderColor: "gray",
-    borderRadius: 5,
-    padding: 10,
-    marginVertical: 5,
-    width: "100%",
-  },
   submitButton: {
     marginTop: 10,
     width: "96%",

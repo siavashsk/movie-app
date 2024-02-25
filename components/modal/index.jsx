@@ -7,6 +7,7 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import { useToast } from "../../context/ToastContext";
 import axios from "axios";
+import InputText from "../inputText";
 
 const validationSchema = yup.object().shape({
   title: yup.string().required("Title is required"),
@@ -27,7 +28,7 @@ const AddModal = () => {
   const handleSubmit = async (values) => {
     if (isSubmittingRef.current) return; // If already submitting, do nothing
     isSubmittingRef.current = true; // Set submitting flag to true
-    
+
     try {
       const data = {
         title: values.title,
@@ -73,8 +74,7 @@ const AddModal = () => {
             {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
               <View style={styles.modalView}>
                 <Text style={styles.modalText}>Add Your Book</Text>
-                <TextInput
-                  style={styles.input}
+                <InputText
                   placeholder="Enter title"
                   value={values.title}
                   onBlur={handleBlur("title")}
@@ -83,8 +83,7 @@ const AddModal = () => {
                 {errors.title && (
                   <Text style={styles.error}>{errors.title}</Text>
                 )}
-                <TextInput
-                  style={styles.input}
+                <InputText
                   placeholder="Enter author"
                   value={values.author}
                   onBlur={handleBlur("author")}
@@ -93,8 +92,7 @@ const AddModal = () => {
                 {errors.author && (
                   <Text style={styles.error}>{errors.author}</Text>
                 )}
-                <TextInput
-                  style={styles.input}
+                <InputText
                   placeholder="Enter genre"
                   value={values.genre}
                   onBlur={handleBlur("genre")}
@@ -103,8 +101,7 @@ const AddModal = () => {
                 {errors.genre && (
                   <Text style={styles.error}>{errors.genre}</Text>
                 )}
-                <TextInput
-                  style={styles.input}
+                <InputText
                   placeholder="Enter year published"
                   value={values.yearPublished}
                   onBlur={handleBlur("yearPublished")}
