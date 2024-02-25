@@ -14,9 +14,9 @@ simple bookstore with react native
 
 ## 🔥 Features
 
-View & Update Books
-Search Books by title and id
-Add and Remove Books
+- View & Update Books
+- Search Books by title and id
+- Add and Remove Books
 
 
 ## 🚀 Setup
