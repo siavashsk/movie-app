@@ -27,6 +27,11 @@ Follow the following steps to get development environment running.
 
 - Install dependencies
 ###  npm install  
+###  npm install -g local-cors-proxy  
+
+- If proxy stopped working after start try this
+###  npm cache clean --force
+
 
 - start development server
 ###  npm run web
