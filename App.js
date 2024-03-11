@@ -1,31 +1,27 @@
-import HomeScreen from "./screens/HomeScreen";
+import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import SearchScreen from "./screens/SearchScreen";
-import { ModalProvider } from "./context/ModalContext";
-import { ToastProvider } from "./context/ToastContext";
+import LoginScreen from "./screens/LoginScreen";
+import SignupScreen from "./screens/SignupScreen";
+import { NativeWindStyleSheet } from "nativewind";
 
-export default function App() {
-  const Stack = createNativeStackNavigator();
+NativeWindStyleSheet.setOutput({
+  default: "native",
+});
+const Stack = createNativeStackNavigator();
 
+function App() {
   return (
-    <ModalProvider>
-      <ToastProvider>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              name="Home"
-              component={HomeScreen}
-              options={{ title: "Welcome to book store" }}
-            />
-            <Stack.Screen
-              name="Search"
-              component={SearchScreen}
-              options={{ title: "Search any book" }}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </ToastProvider>
-    </ModalProvider>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Login"
+        screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Signup" component={SignupScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+export default App;

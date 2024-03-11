@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "bookstore",
-    "slug": "bookstore",
+    "name": "first-app",
+    "slug": "first-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
