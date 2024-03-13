@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function LoginScreen() {
   const navigation = useNavigation();
   return (
-    <View className="bg-white h-full w-full">
+    <View className="bg-neutral-800 h-full w-full">
       <StatusBar style="light" />
       <Image
         className="h-full w-full absolute"
@@ -51,7 +51,12 @@ export default function LoginScreen() {
             entering={FadeInDown.duration(1000).springify()}
             className="bg-black/5 p-5 rounded-2xl w-full"
           >
-            <TextInput placeholder="Email" placeholderTextColor={"gray"} />
+            <TextInput
+              className="text-lg font-normal text-white"
+              style={{ outline: "none" }}
+              placeholder="Email"
+              placeholderTextColor={"gray"}
+            />
           </Animated.View>
 
           <Animated.View
@@ -59,6 +64,8 @@ export default function LoginScreen() {
             className="bg-black/5 p-5 rounded-2xl w-full mb-3"
           >
             <TextInput
+              className="text-lg font-normal text-white"
+              style={{ outline: "none" }}
               placeholder="Password"
               secureTextEntry
               placeholderTextColor={"gray"}
@@ -69,7 +76,10 @@ export default function LoginScreen() {
             entering={FadeInDown.delay(400).duration(1000).springify()}
             className="w-full"
           >
-            <Pressable className="w-full bg-sky-400 p-3 rounded-2xl mb-3">
+            <Pressable
+              className="w-full bg-sky-400 p-3 rounded-2xl mb-3"
+              onPress={() => navigation.navigate("Home")}
+            >
               <Text className="text-xl font-bold text-white text-center">
                 Login
               </Text>
@@ -79,7 +89,9 @@ export default function LoginScreen() {
             entering={FadeInDown.delay(600).duration(1000).springify()}
             className="flex-row justify-center"
           >
-            <Text>Don't have an account? </Text>
+            <Text className="text-gray-400 font-medium">
+              Don't have an account? 
+            </Text>
             <Pressable onPress={() => navigation.push("Signup")}>
               <Text className="text-sky-600 font-medium">Signup</Text>
             </Pressable>

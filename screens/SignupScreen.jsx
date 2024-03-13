@@ -1,18 +1,13 @@
 import { View, Text, Image, TextInput, Pressable } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import Animated, {
-  FadeIn,
-  FadeInDown,
-  FadeInUp,
-  FadeOut,
-} from "react-native-reanimated";
+import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated";
 import { useNavigation } from "@react-navigation/native";
 
 export default function SignupScreen() {
   const navigation = useNavigation();
   return (
-    <View className="bg-white h-full w-full">
+    <View className="bg-neutral-800 h-full w-full">
       <StatusBar style="light" />
       <Image
         className="h-full w-full absolute"
@@ -51,14 +46,24 @@ export default function SignupScreen() {
             entering={FadeInDown.duration(1000).springify()}
             className="bg-black/5 p-5 rounded-2xl w-full"
           >
-            <TextInput placeholder="Username" placeholderTextColor={"gray"} />
+            <TextInput
+              className="text-lg font-normal text-white"
+              placeholder="Username"
+              style={{ outline: "none" }}
+              placeholderTextColor={"gray"}
+            />
           </Animated.View>
 
           <Animated.View
             entering={FadeInDown.delay(200).duration(1000).springify()}
             className="bg-black/5 p-5 rounded-2xl w-full"
           >
-            <TextInput placeholder="Email" placeholderTextColor={"gray"} />
+            <TextInput
+              className="text-lg font-normal text-white"
+              placeholder="Email"
+              style={{ outline: "none" }}
+              placeholderTextColor={"gray"}
+            />
           </Animated.View>
 
           <Animated.View
@@ -66,7 +71,9 @@ export default function SignupScreen() {
             className="bg-black/5 p-5 rounded-2xl w-full mb-3"
           >
             <TextInput
+              className="text-lg font-normal text-white"
               placeholder="Password"
+              style={{ outline: "none" }}
               secureTextEntry
               placeholderTextColor={"gray"}
             />
@@ -86,7 +93,9 @@ export default function SignupScreen() {
             entering={FadeInDown.delay(800).duration(1000).springify()}
             className="flex-row justify-center"
           >
-            <Text>Already have an account? </Text>
+            <Text className="text-gray-400 font-medium">
+              Already have an account? 
+            </Text>
             <Pressable onPress={() => navigation.push("Login")}>
               <Text className="text-sky-600 font-medium">Login</Text>
             </Pressable>
