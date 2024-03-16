@@ -8,7 +8,7 @@ import {
   ScrollView,
   Image,
 } from "react-native";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { XMarkIcon } from "react-native-heroicons/outline";
 import { useNavigation } from "@react-navigation/native";
 import Loading from "../components/ui/loading";
@@ -19,8 +19,13 @@ var { width, height } = Dimensions.get("window");
 
 export default function SearchScreen() {
   const navigation = useNavigation();
+  const inputRef = useRef(null);
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   const handleSearch = (value) => {
     if (value && value.length > 2) {
@@ -48,7 +53,9 @@ export default function SearchScreen() {
         <TextInput
           onChangeText={handleTextDebounce}
           placeholder="Search Movie"
+          style={{ outline: "none"}}
           placeholderTextColor={"lightgray"}
+          ref={inputRef}
           className="pb-1 pl-6 flex-1 text-base font-semibold text-white tracking-wider"
         />
         <Pressable

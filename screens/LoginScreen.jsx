@@ -1,5 +1,5 @@
 import { View, Text, Image, TextInput, Pressable } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Animated, {
   FadeIn,
@@ -8,9 +8,16 @@ import Animated, {
   FadeOut,
 } from "react-native-reanimated";
 import { useNavigation } from "@react-navigation/native";
+import LoadButton from "../components/ui/loadButton";
 
 export default function LoginScreen() {
+  const [isLoading, setIsLoading] = useState(false);
   const navigation = useNavigation();
+
+  function handleSubmit() {
+    navigation.navigate("Home");
+  }
+
   return (
     <View className="bg-neutral-800 h-full w-full">
       <StatusBar style="light" />
@@ -78,11 +85,15 @@ export default function LoginScreen() {
           >
             <Pressable
               className="w-full bg-sky-400 p-3 rounded-2xl mb-3"
-              onPress={() => navigation.navigate("Home")}
+              onPress={handleSubmit}
             >
-              <Text className="text-xl font-bold text-white text-center">
-                Login
-              </Text>
+              {isLoading ? (
+                <LoadButton />
+              ) : (
+                <Text className="text-xl font-bold text-white text-center">
+                  Login
+                </Text>
+              )}
             </Pressable>
           </Animated.View>
           <Animated.View

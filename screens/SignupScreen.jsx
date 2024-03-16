@@ -1,10 +1,12 @@
 import { View, Text, Image, TextInput, Pressable } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated";
 import { useNavigation } from "@react-navigation/native";
+import LoadButton from "../components/ui/loadButton";
 
 export default function SignupScreen() {
+  const [isLoading, setIsLoading] = useState(false);
   const navigation = useNavigation();
   return (
     <View className="bg-neutral-800 h-full w-full">
@@ -84,9 +86,13 @@ export default function SignupScreen() {
             className="w-full"
           >
             <Pressable className="w-full bg-sky-400 p-3 rounded-2xl mb-3">
-              <Text className="text-xl font-bold text-white text-center">
-                Signup
-              </Text>
+              {isLoading ? (
+                <LoadButton />
+              ) : (
+                <Text className="text-xl font-bold text-white text-center">
+                  Signin
+                </Text>
+              )}
             </Pressable>
           </Animated.View>
           <Animated.View
