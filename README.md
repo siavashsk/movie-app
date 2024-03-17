@@ -12,7 +12,6 @@ Movie app built with React Native
 - Lodash - version 4.17.21
 - Expo - version 50.0.11
 
-
 <!-- GETTING STARTED -->
 ## 🚀Installation
 1. Clone the repo
@@ -27,3 +26,5 @@ Movie app built with React Native
     ```sh
    npm run web
    ```
+    -- You need to have an api key in order to render movies -> place api key in src/constants/index.jsx
+   you can get an api key by https://api.themoviedb.org/ 
