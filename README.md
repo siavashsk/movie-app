@@ -27,4 +27,4 @@ Movie app built with React Native
    npm run web
    ```
     -- You need to have an api key in order to render movies -> place api key in src/constants/index.jsx
-   you can get an api key by https://api.themoviedb.org/ 
+   you can get an api key in this website https://api.themoviedb.org/ 
