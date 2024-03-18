@@ -1,4 +1,14 @@
-Movie app built with React Native
+As a passionate developer, I embarked on an exciting journey to create a comprehensive movie app using React Native, which I am proud to share, encompasses a multitude of features tailored to enhance the movie-watching experience.
+
+Key Features:
+
+🌟 Home Screen: It has sections for top-rated movies, upcoming releases, and trending films,
+
+👥 Person Screen: Dive deeper into the world of cinema with a dedicated section showcasing information about renowned actors and actresses, allowing users to explore their filmography and biographies.
+
+🔍 Search Functionality: Seamlessly search through a vast database of movies to find specific titles, genres, or actors, ensuring users can easily discover their next favorite film.
+
+🎥 Movie Screen: Dive into the intricate details of each movie, including cast and crew information, and reviews, empowering users to make informed viewing decisions.
 
 
 ## 🔧 Technologies Used
